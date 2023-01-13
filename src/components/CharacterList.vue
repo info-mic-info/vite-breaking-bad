@@ -15,7 +15,8 @@ export default {
 
 <template lang="">
 <div>
-    <CharacterCard v-for="(item, index) in chracters" :key="index" :character="item"/>
+    <CharacterCard v-for="(item, index) in characters" :key="index" :character="item"/>
+
     
 </div>
 
