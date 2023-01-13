@@ -1,5 +1,13 @@
 <script>
+import CharacterCard from './CharacterCard.vue';
 export default {
+
+    components: {
+        CharacterCard
+    },
+    props: {
+        characters: Array
+    }
 
 }
 </script>
@@ -7,10 +15,12 @@ export default {
 
 <template lang="">
 <div>
-    <h1>Visualizzo CharacterList</h1>
+    <CharacterCard v-for="(item, index) in chracters" :key="index" :character="item"/>
+    
 </div>
 
 
 </template>
+
 <style lang="">
-</style>
+</style> 

@@ -16,7 +16,7 @@ export default {
   data() {
     return {
 
-      // P.S: creo (scrivo ex-novo) un array vuoto
+      // P.S: creo (scrivo ex-novo) un array vuoto e creo la variabile url in cui inserisco l'API
       characterList: [],
       url: "https://db.ygoprodeck.com/api/v7/cardinfo.php"
     }
@@ -26,10 +26,12 @@ export default {
 
     this.getCharacters()
   },
+
+  // Richiamo l'API tramite axios creando una funzione, metto characterList = al percorso che mi permette di visualizzare l'array di oggetti nell'url (il "data finale è il nome dell'array di oggetti")
   methods: {
     getCharacters() {
       axios.get(this.url).then((response) => {
-        console.log(response.data.data)
+        this.characterList = response.data.data
 
       })
     }
@@ -46,7 +48,7 @@ export default {
 <template lang="">
   <div>
     <AppHeader/>
-    <CharacterList/>
+    <CharacterList :characters="characterList"/> 
   </div>
 </template>
 <!-- ____________________________________________________________________________________________________ -->
@@ -57,7 +59,8 @@ export default {
 <!-- PARTE CSS -->
 <!-- 4) Qui posso stilizzare  -->
 <!-- ____________________________________________________________________________________________________ -->
-<style lang="">
-  
+<style lang="scss">
+@use './styles/generals.scss';
 </style>
 <!-- ____________________________________________________________________________________________________ -->
+

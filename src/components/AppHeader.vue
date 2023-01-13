@@ -7,7 +7,7 @@ export default {
 
 <template lang="">
 <div>
-  <h1>Visualizzo AppHeader</h1>
+  <h1 class="text-center">TITOLO</h1>
 </div>
 
 
