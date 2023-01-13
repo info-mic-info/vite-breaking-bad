@@ -7,7 +7,7 @@ export default {
 
 <template lang="">
 <div>
-  <h1 class="text-center">TITOLO</h1>
+  <h1>Yu-Gi-Oh Api</h1>
 </div>
 
 

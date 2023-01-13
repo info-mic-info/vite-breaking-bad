@@ -14,29 +14,29 @@ export default {
     
 
     
-    <div class="d-flex flex-wrap">
-        <div class="border border-primary width">
+    <div class="d-flex width">
+        <div class="text-center m-3 bg-orange">
         <img :src="character.card_images[0].image_url" alt="">
-     <p class="text-danger">Name --> {{ character.name }}</p>
+     <h3 class="text-light">{{ character.name }}</h3>
 
-        <div v>
-         <p class="text-primary">Archetype --> {{ character.archetype }}</p>
-         </div>
+       
+         <p class="text-dark">{{ character.archetype }}</p>
+      
     </div>  
 </div>
 
 </template>
 
 <style lang="scss" scoped>
-.container {
-    width: 100%;
+.bg-orange {
+    background-color: orange;
+
+    img {
+        width: 200px
+    }
 }
 
 .width {
-    // width: calc(100% / 5);
-    margin: 10px;
+    width: calc(100% / 5);
 }
 </style>
-<!-- <div class="primary">
-    
-</div> -->
