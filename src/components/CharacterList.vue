@@ -14,7 +14,7 @@ export default {
 
 
 <template lang="">
-<div>
+<div class="d-flex flex-wrap">
     <CharacterCard v-for="(item, index) in characters" :key="index" :character="item"/>
 
     
@@ -23,5 +23,6 @@ export default {
 
 </template>
 
-<style lang="">
+<style lang="scss" scoped>
+
 </style> 

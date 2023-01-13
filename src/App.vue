@@ -18,7 +18,7 @@ export default {
 
       // P.S: creo (scrivo ex-novo) un array vuoto e creo la variabile url in cui inserisco l'API
       characterList: [],
-      url: "https://db.ygoprodeck.com/api/v7/cardinfo.php"
+      url: "https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Alien"
     }
   },
 
