@@ -12,7 +12,7 @@ export default {
     <div class="text-center m-4 bg-orange ">
 
              <img :src="character.card_images[0].image_url" alt="">
-            <h6 class="text-light">{{ character.name }}</h6>
+            <h6 class="text-light m-3">{{ character.name }}</h6>
             <p class="text-dark">{{ character.archetype }}</p>
       
     </div>  
