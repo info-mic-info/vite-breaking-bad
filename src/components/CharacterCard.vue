@@ -9,30 +9,25 @@ export default {
 <template lang="">
 
 
-    
-    
-    
+    <div class="text-center m-4 bg-orange ">
 
-    
-    <div class="d-flex width">
-        <div class="text-center m-3 bg-orange">
-        <img :src="character.card_images[0].image_url" alt="">
-     <h3 class="text-light">{{ character.name }}</h3>
-
-       
-         <p class="text-dark">{{ character.archetype }}</p>
+             <img :src="character.card_images[0].image_url" alt="">
+            <h6 class="text-light">{{ character.name }}</h6>
+            <p class="text-dark">{{ character.archetype }}</p>
       
     </div>  
-</div>
+
 
 </template>
 
 <style lang="scss" scoped>
+@use '../styles/partials/variables' as *;
+
 .bg-orange {
-    background-color: orange;
+    background-color: $bg-orange;
 
     img {
-        width: 200px
+        width: 300px
     }
 }
 
