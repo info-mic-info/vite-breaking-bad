@@ -1,12 +1,17 @@
 <script>
 import CharacterCard from './CharacterCard.vue';
+import { store } from '../store.js';
+
 export default {
 
     components: {
         CharacterCard
     },
-    props: {
-        characters: Array
+
+    data() {
+        return {
+            store
+        }
     }
 
 }
@@ -28,7 +33,7 @@ export default {
     <div class="bg-darkgray text-light p-4 ">Found 39 cards</div>
  <div class="container-fluid text-bg-light">
      <div class="d-flex flex-wrap justify-content-center"> 
-        <CharacterCard v-for="(item, index) in characters" :key="index" :character="item"/>
+        <CharacterCard v-for="(item, index) in store.characterList" :key="index" :character="item"/>
     </div>
 </div>
 </div>

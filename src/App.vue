@@ -6,6 +6,8 @@ import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
 import CharacterList from './components/CharacterList.vue';
 
+import { store } from './store.js'
+
 // 2) Richiamo le componenti che ho importato precedentemente nel punto 1
 export default {
   components: {
@@ -17,8 +19,7 @@ export default {
     return {
 
       // P.S: creo (scrivo ex-novo) un array vuoto e creo la variabile url in cui inserisco l'API
-      characterList: [],
-      url: "https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Alien"
+      store
     }
   },
 
@@ -30,8 +31,8 @@ export default {
   // Richiamo l'API tramite axios creando una funzione, metto characterList = al percorso che mi permette di visualizzare l'array di oggetti nell'url (il "data finale è il nome dell'array di oggetti")
   methods: {
     getCharacters() {
-      axios.get(this.url).then((response) => {
-        this.characterList = response.data.data
+      axios.get(store.url).then((response) => {
+        store.characterList = response.data.data
 
       })
     }
@@ -49,7 +50,7 @@ export default {
   <div>
     <AppHeader/>
     <!-- P.s: "characterList" che tiene l'array lo passiamo tramite props a "CharacterList" -->
-    <CharacterList :characters="characterList"/> 
+    <CharacterList/> 
   </div>
 </template>
 <!-- ____________________________________________________________________________________________________ -->
