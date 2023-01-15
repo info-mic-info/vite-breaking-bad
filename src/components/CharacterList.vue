@@ -27,7 +27,7 @@ export default {
 
     <div class="bg-darkgray text-light p-4 ">Found 39 cards</div>
  <div class="container-fluid text-bg-light">
-     <div class="d-flex flex-wrap justify-content-center">
+     <div class="d-flex flex-wrap justify-content-center"> 
         <CharacterCard v-for="(item, index) in characters" :key="index" :character="item"/>
     </div>
 </div>

@@ -48,6 +48,7 @@ export default {
 <template lang="">
   <div>
     <AppHeader/>
+    <!-- P.s: "characterList" che tiene l'array lo passiamo tramite props a "CharacterList" -->
     <CharacterList :characters="characterList"/> 
   </div>
 </template>
