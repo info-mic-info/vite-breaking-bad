@@ -1,19 +1,40 @@
 <script>
+import axios from 'axios';
 import CharacterCard from './CharacterCard.vue';
 import { store } from '../store.js';
+import AppSelect from './AppSelect.vue';
 
 export default {
 
     components: {
-        CharacterCard
+        CharacterCard,
+        AppSelect
+
     },
 
     data() {
         return {
             store
         }
-    }
+    },
+    methods: {
 
+        select_archetype(value) {
+
+            axios.get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${value}`).then((response) => {
+                store.characterList = response.data.data;
+
+
+                // 2°Metodo
+                // let apiUrl = store.url_Complete + '?archetype=' + value;
+
+                // axios.get(apiUrl).then((response) => {
+                //     store.characterList = response.data.data;
+
+            })
+            console.log(apiUrl)
+        }
+    }
 }
 </script>
 
@@ -21,14 +42,13 @@ export default {
 <template lang="">
 
 <div class="container-fluid bg-orange p-5 ">
-
-    <select class="form-select w-25 my-3" aria-label="Default select example">
+    <AppSelect :archetype="store.selectGenere" @selection="select_archetype"/>
+    <!-- <select class="form-select w-25 my-3" aria-label="Default select example">
   <option selected>Select Type</option>
   <option value="1">Alien</option>
   <option value="2">Fire</option>
   <option value="3">Water</option>
-</select>
-
+</select> -->
 
     <div class="bg-darkgray text-light p-4 ">Found 39 cards</div>
  <div class="container-fluid text-bg-light">

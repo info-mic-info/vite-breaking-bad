@@ -35,6 +35,10 @@ export default {
         store.characterList = response.data.data
 
       })
+      axios.get(store.url_archetypes).then((response) => {
+        store.selectGenere = response.data
+
+      })
     }
   }
 }
